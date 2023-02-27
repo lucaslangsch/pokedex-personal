@@ -1,20 +1,27 @@
 import { createDiv } from "./createDiv";
 import { formatData } from "./fetchFuntcions";
 
-const pokemonLista = document.querySelector('pokemon-list')
+const pokemonLista = document.querySelector('.pokemon-list');
+const input = document.querySelector('.input-pokemon');
+let filterTerm = '';
 
-const pokemonCard = document.createElement('div')
-
-
-
-
+input.addEventListener('keyup', () => {
+  filterTerm = input.value;
+  setDiv();
+});
 
 function setDiv() {
   formatData(async pokemonList => {
-    const template = await createDiv(pokemonList);
-    console.log(template) // Aqui aparece no console
-    pokemonCard.innerHTML = template // Aqui da erro de promisse
-    pokemonLista.appendChild(pokemonCard)
-  })
-}
-setDiv()
+    const listFiltered = filterList(pokemonList);
+    const template = await createDiv(listFiltered);
+    pokemonLista.innerHTML = template;
+    });
+};
+
+const filterList = (pokemonList) => {
+  return pokemonList.filter(pokemon => {
+    return pokemon.name.toLowerCase().includes(filterTerm.toLowerCase());
+  });
+};
+
+setDiv();

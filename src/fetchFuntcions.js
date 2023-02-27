@@ -13,8 +13,8 @@ export function formatData(callback) {
       const number = String(index + 1).padStart(3, '0');
       return {
         name: pokemon.name,
-        number, // Chave e valor iguais, não precisa fazer number: number
-
+        number: '#' + number,
+        image: URL_IMAGE + number + '.png'
       };
     });
     callback(pokemonList);

@@ -9,7 +9,7 @@ body {
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.2fr 0.1fr 1.7fr;
-  grid-template-areas: 
+  grid-template-areas:
     "header header header header"
     "input input input input"
     "main main main main";
@@ -51,8 +51,8 @@ main {
   grid-area: main;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: 
-  "div div div div";
+  grid-template-areas:
+    "div div div div";
   margin-top: 1%;
   height: 100%;
 
@@ -69,9 +69,50 @@ main {
 }
 
 .pokemon {
-width: 280px;
-height: 160px;
-background: #1E1E1E;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 20px;
+  display: flex;
+  width: 280px;
+  height: 160px;
+  background: #1e1e1ee1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.644);
+  border-radius: 20px;
+}
+
+img {
+  position: relative;
+  right: -30%;
+  width: 160px;
+}
+
+.pokemon-name {
+  text-transform: capitalize;
+  display: flex;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #FFFFFF;
+  align-items: center;
+}
+
+.pokemon-number {
+  position: relative;
+  top: 5%;
+  right: -5%;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+.pokeball-back {
+  position: fixed;
+  top: 100%;
+  left: -25%;
+  transform: translateY(-50%);
+  z-index: -1;
+  width: 50%;
+  opacity: 0.7;
 }
