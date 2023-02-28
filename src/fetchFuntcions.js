@@ -12,7 +12,7 @@ export async function getType(type) {
   const response = await fetch(URL_POKEMON + type);
   const data = await response.json();
   console.log(data.types[0].type.name);
-  // return data.types[0].type;
+  // return data.types[0].type.name;
  };
 
 export function formatData(callback) {
