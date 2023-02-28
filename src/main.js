@@ -1,5 +1,5 @@
 import { createDiv } from "./createDiv";
-import { formatData } from "./fetchFuntcions";
+import { formatData, getType } from "./fetchFuntcions";
 
 const pokemonLista = document.querySelector('.pokemon-list');
 const input = document.querySelector('.input-pokemon');
@@ -25,3 +25,4 @@ const filterList = (pokemonList) => {
 };
 
 setDiv();
+getType(1)
